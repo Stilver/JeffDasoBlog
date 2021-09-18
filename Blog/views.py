@@ -11,7 +11,8 @@ def show_all_posts(request):
 def show_post(request, post_id):
     post = Post.objects.filter(id=post_id)
     if post:
+        post = post.first()
         post.watch_count += 1
         post.save()
-        return render(request, '../templates/current_post.html', {'post': post.first()})
+        return render(request, '../templates/current_post.html', {'post': post})
     return HttpResponseNotFound(f"Post not found")
