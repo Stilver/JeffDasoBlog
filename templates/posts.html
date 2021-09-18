@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Jeff Daso's Blog!</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css"/>
 </head>
 <body>
+    {% include "header.html" %}
     {% if posts %}
         {% for post in posts %}
-            <a href="/{{ post.id }}">{{ post.title }}</a><br>
-            {{ post.content }}<br>
-            {{ post.publication_date }}<br><br>
+            {% include "post_overview.html" with post=post %}
         {% endfor %}
     {% else %}
         No posts to show =(

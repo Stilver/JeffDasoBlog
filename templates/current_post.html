@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ post.title }}</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css"/>
 </head>
 <body>
-    {{ post.title }}<br>
-    {{ post.content }}<br>
-    {{ post.publication_date }}
+    {% include "header.html" %}
+    {% include "post_template.html" with post=post %}
 </body>
 </html>
