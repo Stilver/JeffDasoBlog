@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Jeff Daso's Blog!</title>
+</head>
+<body>
+    {% if posts %}
+        {% for post in posts %}
+            {{ post.title }}<br>
+            {{ post.content }}<br>
+            {{ post.publication_date }}<br><br>
+        {% endfor %}
+    {% else %}
+        No posts to show =(
+    {% endif %}
+</body>
+</html>
