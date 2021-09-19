@@ -7,3 +7,9 @@ class Post(models.Model):
     content = models.TextField()
     watch_count = models.IntegerField(default=0)
     publication_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-publication_date']
+
+    def __str__(self):
+        return self.title

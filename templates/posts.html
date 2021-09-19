@@ -9,7 +9,7 @@
     {% include "header.html" %}
     {% if posts %}
         {% for post in posts %}
-            {% include "post_overview.html" with post=post %}
+            {% include "post_template.html" with post=post %}
         {% endfor %}
     {% else %}
         No posts to show =(
